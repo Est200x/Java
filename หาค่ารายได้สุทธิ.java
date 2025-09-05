@@ -1,10 +1,10 @@
 import java.util.Scanner;
-
+  
 public class CommissionCalculator {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("ป้อนยอดขาย: ");
+        System.out.print("sales: ");
         double sales = sc.nextDouble();
 
         double commission;
@@ -17,11 +17,15 @@ public class CommissionCalculator {
             commission = sales * 0.10;
         } else if (sales <= 20000) {
             commission = sales * 0.15;
-        } else {
+        } else if (sales >= 20000) {
+            commission = sales * 0.20;
+        } 
+        else {
             commission = sales * 0.20;
         }
 
-        System.out.println("ยอดขาย: " + sales + " บาท");
-        System.out.println("ค่าคอมมิชชั่น: " + commission + " บาท");
+        System.out.println("sales: " + sales + "baht");
+        System.out.println("commisson: " + commission + "baht");
+        sc.close();
     }
 }
